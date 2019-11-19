@@ -31,6 +31,8 @@ ball.shape("square")
 ball.color("white")
 ball.penup()
 ball.goto(0,0)
+ball.dx = 2
+ball.dy = 2
 
 #Function 
 def paddle_a_up():
@@ -60,7 +62,12 @@ wn.onkey(paddle_a_down, "s")
 wn.onkey(paddle_b_up, "o")
 wn.onkey(paddle_b_down, "l")
 
+
 #Main game loop
 while True:
     wn.update()
+
+    #move ball
+    ball.setx(ball.xcor()+ ball.dx)
+    ball.sety(ball.ycor()+ ball.dy)
 
